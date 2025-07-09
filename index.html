@@ -162,9 +162,7 @@
                 <div class="about-content">
                     <div class="about-text">
                         <h3>Your Reliable Development Partner</h3>
-                        <p>As a freelance developer from Pakistan, I specialize in turning your business ideas into reality through robust software solutions. My expertise spans backend development, mobile apps, and AI integrations.</p>
-                        <p>I'm currently pursuing my final year project in AI-powered applications, ensuring I stay at the cutting edge of technology to serve your needs better.</p>
-                        
+                        <p>As a freelance developer, I specialize in turning your business ideas into reality through robust software solutions. My expertise spans backend development, mobile apps, and AI integrations.</p>
                         <div class="value-propositions">
                             <div class="value-prop">
                                 <div class="value-icon">
@@ -211,8 +209,8 @@
                         </div>
                     </div>
                     <div class="about-image">
-                        <div class="image-placeholder">
-                            <i class="fas fa-user-tie"></i>
+                        <div class="profile-image">
+                            <img src="https://avatars.githubusercontent.com/u/95233538?v=4" alt="Muhammad Usman - Freelance Developer" loading="lazy">
                         </div>
                     </div>
                 </div>
@@ -932,7 +930,7 @@
         }, observerOptions);
 
         // Observe elements for animation
-        document.querySelectorAll('.section, .project-card, .timeline-item, .skill-category').forEach(el => {
+        document.querySelectorAll('.section, .project-card, .timeline-item, .skill-category, .about-stats').forEach(el => {
             observer.observe(el);
         });
 
@@ -947,9 +945,9 @@
         // 3. Create an email template with variables: {{name}}, {{email}}, {{service}}, {{budget}}, {{message}}
         // 4. Replace the credentials below with your actual EmailJS credentials
         
-        const EMAILJS_SERVICE_ID = 'YOUR_SERVICE_ID'; // Replace with your service ID
-        const EMAILJS_TEMPLATE_ID = 'YOUR_TEMPLATE_ID'; // Replace with your template ID  
-        const EMAILJS_PUBLIC_KEY = 'YOUR_PUBLIC_KEY'; // Replace with your public key
+        const EMAILJS_SERVICE_ID = 'service_ap944oo'; // Replace with your service ID
+        const EMAILJS_TEMPLATE_ID = 'template_r6i4srr'; // Replace with your template ID  
+        const EMAILJS_PUBLIC_KEY = 'sc83YsgU1fnS7fTr1'; // Replace with your public key
 
         // Check if EmailJS is configured
         const isEmailJSConfigured = EMAILJS_SERVICE_ID !== 'YOUR_SERVICE_ID' && 
