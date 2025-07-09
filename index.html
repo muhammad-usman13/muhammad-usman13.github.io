@@ -863,8 +863,12 @@
         const body = document.body;
         const themeIcon = themeToggle.querySelector('i');
 
-        // Check for saved theme preference or default to 'light'
-        const currentTheme = localStorage.getItem('theme') || 'light';
+        // Check for saved theme preference or default to system preference
+        const getSystemTheme = () => {
+            return window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+        };
+        
+        const currentTheme = localStorage.getItem('theme') || getSystemTheme();
         body.setAttribute('data-theme', currentTheme);
         
         // Set initial icon
@@ -872,6 +876,21 @@
             themeIcon.className = 'fas fa-sun';
         } else {
             themeIcon.className = 'fas fa-moon';
+        }
+
+        // Listen for system theme changes if no manual preference is set
+        if (!localStorage.getItem('theme')) {
+            window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
+                const newTheme = e.matches ? 'dark' : 'light';
+                body.setAttribute('data-theme', newTheme);
+                
+                // Update icon
+                if (newTheme === 'dark') {
+                    themeIcon.className = 'fas fa-sun';
+                } else {
+                    themeIcon.className = 'fas fa-moon';
+                }
+            });
         }
 
         themeToggle.addEventListener('click', () => {
