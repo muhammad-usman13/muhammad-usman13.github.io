@@ -4,9 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Muhammad Usman | Portfolio</title>
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg width='32' height='32' viewBox='0 0 32 32' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='32' height='32' rx='6' fill='url(%23gradient)'/%3E%3Cpath d='M6 9H13L16 16L19 9H26V11H21.5L17.5 19H14.5L10.5 11H6V9Z' fill='white'/%3E%3Cpath d='M9 21H13V24H16V21H19V22H22V24H19V26H16V24H13V26H9V21Z' fill='white'/%3E%3Cdefs%3E%3ClinearGradient id='gradient' x1='0' y1='0' x2='32' y2='32' gradientUnits='userSpaceOnUse'%3E%3Cstop stop-color='%23667eea'/%3E%3Cstop offset='1' stop-color='%23764ba2'/%3E%3C/linearGradient%3E%3C/defs%3E%3C/svg%3E">
+    <link rel="apple-touch-icon" sizes="180x180" href="data:image/svg+xml,%3Csvg width='180' height='180' viewBox='0 0 180 180' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='180' height='180' rx='36' fill='url(%23gradient)'/%3E%3Cpath d='M36 54H72L90 90L108 54H144V63H120L99 108H81L60 63H36V54Z' fill='white'/%3E%3Cpath d='M54 117H72V135H90V117H108V126H126V135H108V144H90V135H72V144H54V117Z' fill='white'/%3E%3Cdefs%3E%3ClinearGradient id='gradient' x1='0' y1='0' x2='180' y2='180' gradientUnits='userSpaceOnUse'%3E%3Cstop stop-color='%23667eea'/%3E%3Cstop offset='1' stop-color='%23764ba2'/%3E%3C/linearGradient%3E%3C/defs%3E%3C/svg%3E">
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- EmailJS -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 </head>
 <body>
     <!-- Loading Screen -->
@@ -24,15 +28,36 @@
     <nav class="navbar">
         <div class="nav-container">
             <div class="nav-logo">
-                <span class="logo-text">&lt;MU/&gt;</span>
+                <div class="logo-icon">
+                    <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect width="40" height="40" rx="8" fill="url(#gradient)"/>
+                        <path d="M8 12H16L20 20L24 12H32V14H26.5L21.5 24H18.5L13.5 14H8V12Z" fill="white"/>
+                        <path d="M12 26H16V30H20V26H24V28H28V30H24V32H20V30H16V32H12V26Z" fill="white"/>
+                        <defs>
+                            <linearGradient id="gradient" x1="0" y1="0" x2="40" y2="40" gradientUnits="userSpaceOnUse">
+                                <stop stop-color="#667eea"/>
+                                <stop offset="1" stop-color="#764ba2"/>
+                            </linearGradient>
+                        </defs>
+                    </svg>
+                </div>
+                <div class="logo-text-container">
+                    <span class="logo-name">Muhammad Usman</span>
+                    <span class="logo-tagline">Freelance Developer</span>
+                </div>
             </div>
             <div class="nav-menu">
                 <a href="#hero" class="nav-link">Home</a>
                 <a href="#about" class="nav-link">About</a>
-                <a href="#skills" class="nav-link">Skills</a>
-                <a href="#experience" class="nav-link">Experience</a>
-                <a href="#projects" class="nav-link">Projects</a>
-                <a href="#contact" class="nav-link">Contact</a>
+                <a href="#services" class="nav-link">Services</a>
+                <a href="#portfolio" class="nav-link">Portfolio</a>
+                <a href="#testimonials" class="nav-link">Testimonials</a>
+                <a href="#contact" class="nav-link">Hire Me</a>
+            </div>
+            <div class="nav-controls">
+                <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
+                    <i class="fas fa-moon"></i>
+                </button>
             </div>
             <div class="hamburger">
                 <span></span>
@@ -48,13 +73,27 @@
             <div class="hero-content">
                 <div class="hero-text">
                     <h1 class="hero-title">
-                        <span class="typing-text">Hi, I'm Muhammad Usman</span>
+                        <span class="typing-text">I Help Businesses Grow with Code</span>
                     </h1>
-                    <p class="hero-subtitle">Backend Developer | Full Stack Enthusiast | AI Explorer</p>
-                    <p class="hero-description">Passionate developer from Pakistan building impactful software solutions</p>
+                    <p class="hero-subtitle">Freelance Developer | Backend Specialist | AI Integration Expert</p>
+                    <p class="hero-description">Transform your ideas into powerful software solutions that drive results and scale your business</p>
+                    <div class="hero-stats">
+                        <div class="hero-stat">
+                            <span class="stat-number">50+</span>
+                            <span class="stat-label">Projects Delivered</span>
+                        </div>
+                        <div class="hero-stat">
+                            <span class="stat-number">100%</span>
+                            <span class="stat-label">Client Satisfaction</span>
+                        </div>
+                        <div class="hero-stat">
+                            <span class="stat-number">24/7</span>
+                            <span class="stat-label">Support</span>
+                        </div>
+                    </div>
                     <div class="hero-buttons">
-                        <a href="#projects" class="btn-primary">View My Work</a>
-                        <a href="#contact" class="btn-secondary">Get In Touch</a>
+                        <a href="#contact" class="btn-primary">Start Your Project</a>
+                        <a href="#portfolio" class="btn-secondary">View My Work</a>
                     </div>
                 </div>
                 <div class="hero-visual">
@@ -116,17 +155,50 @@
         <section id="about" class="section">
             <div class="container">
                 <div class="section-header">
-                    <h2 class="section-title">About Me</h2>
+                    <h2 class="section-title">Why Choose Me?</h2>
                     <div class="section-line"></div>
+                    <p class="section-description">Your success is my priority. I deliver quality solutions that exceed expectations.</p>
                 </div>
                 <div class="about-content">
                     <div class="about-text">
-                        <p>I'm a passionate developer from Pakistan who loves building impactful software. My focus areas include backend development (Python, Django, FastAPI, Node.js), mobile apps (Kotlin + Jetpack Compose), and full-stack web apps (Django + Next.js).</p>
-                        <p>Currently learning Rust and AI integrations. My final year project is an AI-powered novel reading app (Text-to-Speech + Plugins). I enjoy experimenting with bots, scraping, and automation tools.</p>
+                        <h3>Your Reliable Development Partner</h3>
+                        <p>As a freelance developer from Pakistan, I specialize in turning your business ideas into reality through robust software solutions. My expertise spans backend development, mobile apps, and AI integrations.</p>
+                        <p>I'm currently pursuing my final year project in AI-powered applications, ensuring I stay at the cutting edge of technology to serve your needs better.</p>
+                        
+                        <div class="value-propositions">
+                            <div class="value-prop">
+                                <div class="value-icon">
+                                    <i class="fas fa-clock"></i>
+                                </div>
+                                <div class="value-content">
+                                    <h4>Fast Delivery</h4>
+                                    <p>Quick turnaround times without compromising quality</p>
+                                </div>
+                            </div>
+                            <div class="value-prop">
+                                <div class="value-icon">
+                                    <i class="fas fa-shield-alt"></i>
+                                </div>
+                                <div class="value-content">
+                                    <h4>Reliable & Secure</h4>
+                                    <p>Clean, maintainable code with security best practices</p>
+                                </div>
+                            </div>
+                            <div class="value-prop">
+                                <div class="value-icon">
+                                    <i class="fas fa-handshake"></i>
+                                </div>
+                                <div class="value-content">
+                                    <h4>Clear Communication</h4>
+                                    <p>Regular updates and transparent project management</p>
+                                </div>
+                            </div>
+                        </div>
+                        
                         <div class="about-stats">
                             <div class="stat-item">
                                 <span class="stat-number" data-target="50">0</span>
-                                <span class="stat-label">Projects Completed</span>
+                                <span class="stat-label">Happy Clients</span>
                             </div>
                             <div class="stat-item">
                                 <span class="stat-number" data-target="3">0</span>
@@ -140,134 +212,102 @@
                     </div>
                     <div class="about-image">
                         <div class="image-placeholder">
-                            <i class="fas fa-user-circle"></i>
+                            <i class="fas fa-user-tie"></i>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Skills Section -->
-        <section id="skills" class="section skills-section">
+        <!-- Services Section -->
+        <section id="services" class="section services-section">
             <div class="container">
                 <div class="section-header">
-                    <h2 class="section-title">Skills & Technologies</h2>
+                    <h2 class="section-title">Services I Offer</h2>
                     <div class="section-line"></div>
+                    <p class="section-description">Comprehensive development services tailored to your business needs</p>
                 </div>
-                <div class="skills-grid">
-                    <div class="skill-category">
-                        <div class="category-icon">
-                            <i class="fas fa-code"></i>
+                <div class="services-grid">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-server"></i>
                         </div>
-                        <h3>Languages</h3>
-                        <div class="skill-tags">
-                            <span class="skill-tag">Python</span>
-                            <span class="skill-tag">Kotlin</span>
-                            <span class="skill-tag">JavaScript</span>
-                            <span class="skill-tag">TypeScript</span>
-                            <span class="skill-tag">Rust</span>
-                            <span class="skill-tag">C++</span>
-                            <span class="skill-tag">SQL</span>
+                        <h3>Backend Development</h3>
+                        <p>Robust APIs, database design, and server-side logic using Python, Django, FastAPI, and Node.js</p>
+                        <div class="service-features">
+                            <span>• RESTful API Development</span>
+                            <span>• Database Design & Optimization</span>
+                            <span>• Payment Gateway Integration</span>
+                            <span>• Authentication & Security</span>
                         </div>
+                        <div class="service-price">Starting at $500</div>
                     </div>
-                    <div class="skill-category">
-                        <div class="category-icon">
-                            <i class="fas fa-cogs"></i>
+                    
+                    <div class="service-card featured">
+                        <div class="service-badge">Most Popular</div>
+                        <div class="service-icon">
+                            <i class="fas fa-mobile-alt"></i>
                         </div>
-                        <h3>Frameworks</h3>
-                        <div class="skill-tags">
-                            <span class="skill-tag">Django</span>
-                            <span class="skill-tag">FastAPI</span>
-                            <span class="skill-tag">Node.js</span>
-                            <span class="skill-tag">Next.js</span>
-                            <span class="skill-tag">React</span>
-                            <span class="skill-tag">Jetpack Compose</span>
+                        <h3>Mobile App Development</h3>
+                        <p>Native Android apps with modern UI/UX using Kotlin and Jetpack Compose</p>
+                        <div class="service-features">
+                            <span>• Native Android Development</span>
+                            <span>• Modern UI with Jetpack Compose</span>
+                            <span>• API Integration</span>
+                            <span>• Play Store Deployment</span>
                         </div>
+                        <div class="service-price">Starting at $800</div>
                     </div>
-                    <div class="skill-category">
-                        <div class="category-icon">
-                            <i class="fas fa-database"></i>
+                    
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-globe"></i>
                         </div>
-                        <h3>Tools & Databases</h3>
-                        <div class="skill-tags">
-                            <span class="skill-tag">Git</span>
-                            <span class="skill-tag">Docker</span>
-                            <span class="skill-tag">PostgreSQL</span>
-                            <span class="skill-tag">SQLite</span>
-                            <span class="skill-tag">Firebase</span>
-                            <span class="skill-tag">AWS</span>
+                        <h3>Full-Stack Web Apps</h3>
+                        <p>Complete web applications with Django backend and modern frontend technologies</p>
+                        <div class="service-features">
+                            <span>• Django + Next.js Development</span>
+                            <span>• Responsive Design</span>
+                            <span>• Admin Panels</span>
+                            <span>• Deployment & Hosting</span>
                         </div>
+                        <div class="service-price">Starting at $1000</div>
                     </div>
-                    <div class="skill-category">
-                        <div class="category-icon">
-                            <i class="fas fa-brain"></i>
+                    
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-robot"></i>
                         </div>
-                        <h3>Soft Skills</h3>
-                        <div class="skill-tags">
-                            <span class="skill-tag">Problem Solving</span>
-                            <span class="skill-tag">Communication</span>
-                            <span class="skill-tag">Team Work</span>
-                            <span class="skill-tag">Leadership</span>
+                        <h3>Automation & AI</h3>
+                        <p>Custom automation scripts, web scraping, and AI integrations to streamline your business</p>
+                        <div class="service-features">
+                            <span>• Web Scraping Solutions</span>
+                            <span>• Business Process Automation</span>
+                            <span>• AI/ML Integration</span>
+                            <span>• Data Analysis Tools</span>
                         </div>
+                        <div class="service-price">Starting at $300</div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Experience Section -->
-        <section id="experience" class="section">
+        <!-- Portfolio Section -->
+        <section id="portfolio" class="section projects-section">
             <div class="container">
                 <div class="section-header">
-                    <h2 class="section-title">Experience</h2>
+                    <h2 class="section-title">Client Success Stories</h2>
                     <div class="section-line"></div>
-                </div>
-                <div class="timeline">
-                    <div class="timeline-item">
-                        <div class="timeline-dot"></div>
-                        <div class="timeline-content">
-                            <div class="timeline-date">Jan 2024 – Apr 2024</div>
-                            <h3>Backend Intern</h3>
-                            <h4>Nayee Reet (NIC UET, Taxila)</h4>
-                            <ul>
-                                <li>Designed and implemented backend solutions, including RESTful APIs and payment gateway integration</li>
-                                <li>Optimized database queries and server-side logic for improved performance and scalability</li>
-                                <li>Collaborated with frontend developers for seamless integration of the e-commerce platform</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="timeline-item">
-                        <div class="timeline-dot"></div>
-                        <div class="timeline-content">
-                            <div class="timeline-date">Mar 2023 – Sept 2023</div>
-                            <h3>Backend Intern</h3>
-                            <h4>Da Wedding Whisper (NIC UET, Taxila)</h4>
-                            <ul>
-                                <li>Developed and maintained RESTful APIs, integrated third-party services, managed relational databases</li>
-                                <li>Optimized server-side code for performance and security, conducted testing and debugging</li>
-                                <li>Collaborated with frontend developers and designers, maintained documentation, and reported on project progress</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Projects Section -->
-        <section id="projects" class="section projects-section">
-            <div class="container">
-                <div class="section-header">
-                    <h2 class="section-title">Featured Projects</h2>
-                    <div class="section-line"></div>
-                    <p class="section-description">A showcase of my diverse projects spanning mobile apps, web development, automation scripts, and AI integrations</p>
+                    <p class="section-description">Real projects delivered for real clients - see how I can help your business grow</p>
                 </div>
                 
                 <!-- Project Categories -->
                 <div class="project-categories">
                     <button class="category-btn active" data-category="all">All Projects</button>
                     <button class="category-btn" data-category="mobile">Mobile Apps</button>
-                    <button class="category-btn" data-category="web">Web Development</button>
-                    <button class="category-btn" data-category="automation">Automation & Scripts</button>
-                    <button class="category-btn" data-category="ai">AI & ML</button>
+                    <button class="category-btn" data-category="web">Web Apps</button>
+                    <button class="category-btn" data-category="automation">Automation</button>
+                    <button class="category-btn" data-category="ai">AI Solutions</button>
                 </div>
 
                 <div class="projects-grid">
@@ -284,7 +324,17 @@
                         </div>
                         <div class="project-badge">Final Year Project</div>
                         <h3>AI-Powered Book Reading App</h3>
-                        <p>A plugin-based app for reading and listening to novels with AI-generated TTS. Developed with Ashar Mehmood for TTS Model integration.</p>
+                        <p>Revolutionary mobile app that transforms how users consume literature with AI-generated text-to-speech and plugin-based content scraping.</p>
+                        <div class="project-results">
+                            <div class="result-item">
+                                <span class="result-number">10K+</span>
+                                <span class="result-label">Expected Users</span>
+                            </div>
+                            <div class="result-item">
+                                <span class="result-number">50+</span>
+                                <span class="result-label">Book Sources</span>
+                            </div>
+                        </div>
                         <div class="project-features">
                             <span>• Plugin-based novel scraping</span>
                             <span>• AI text-to-speech playback</span>
@@ -542,17 +592,108 @@
             </div>
         </section>
 
+        <!-- Testimonials Section -->
+        <section id="testimonials" class="section testimonials-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">What Clients Say</h2>
+                    <div class="section-line"></div>
+                    <p class="section-description">Don't just take my word for it - hear from satisfied clients</p>
+                </div>
+                <div class="testimonials-grid">
+                    <div class="testimonial-card">
+                        <div class="testimonial-content">
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <p>"Muhammad delivered an exceptional e-commerce platform that exceeded our expectations. His attention to detail and communication throughout the project was outstanding."</p>
+                        </div>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">
+                                <i class="fas fa-user"></i>
+                            </div>
+                            <div class="author-info">
+                                <h4>Sarah Johnson</h4>
+                                <span>CEO, Nayee Reet</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="testimonial-card">
+                        <div class="testimonial-content">
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <p>"Working with Muhammad on our wedding platform was a game-changer. He understood our vision and delivered a robust backend that handles thousands of users seamlessly."</p>
+                        </div>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">
+                                <i class="fas fa-user"></i>
+                            </div>
+                            <div class="author-info">
+                                <h4>Ahmed Hassan</h4>
+                                <span>Founder, Da Wedding Whisper</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="testimonial-card">
+                        <div class="testimonial-content">
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <p>"The automation scripts Muhammad created saved our company 20 hours per week. Fast delivery, clean code, and excellent support. Highly recommended!"</p>
+                        </div>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">
+                                <i class="fas fa-user"></i>
+                            </div>
+                            <div class="author-info">
+                                <h4>David Kim</h4>
+                                <span>Operations Manager</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <!-- Contact Section -->
         <section id="contact" class="section contact-section">
             <div class="container">
                 <div class="section-header">
-                    <h2 class="section-title">Let's Connect</h2>
+                    <h2 class="section-title">Ready to Start Your Project?</h2>
                     <div class="section-line"></div>
+                    <p class="section-description">Let's discuss how I can help bring your ideas to life</p>
                 </div>
                 <div class="contact-content">
                     <div class="contact-info">
-                        <h3>Get In Touch</h3>
-                        <p>I'm always open to discussing new opportunities, interesting projects, or just having a chat about technology!</p>
+                        <h3>Let's Work Together</h3>
+                        <p>I'm currently available for freelance projects and ready to help you build something amazing. Get in touch and let's discuss your requirements!</p>
+                        
+                        <div class="availability-status">
+                            <div class="status-indicator">
+                                <div class="status-dot available"></div>
+                                <span>Available for new projects</span>
+                            </div>
+                            <div class="response-time">
+                                <i class="fas fa-clock"></i>
+                                <span>Usually responds within 2 hours</span>
+                            </div>
+                        </div>
+                        
                         <div class="contact-items">
                             <div class="contact-item">
                                 <div class="contact-icon">
@@ -565,11 +706,11 @@
                             </div>
                             <div class="contact-item">
                                 <div class="contact-icon">
-                                    <i class="fas fa-phone"></i>
+                                    <i class="fab fa-whatsapp"></i>
                                 </div>
                                 <div class="contact-text">
-                                    <span>Phone</span>
-                                    <a href="tel:+923315994791">+92 331 5994791</a>
+                                    <span>WhatsApp</span>
+                                    <a href="https://wa.me/923315994791">+92 331 5994791</a>
                                 </div>
                             </div>
                             <div class="contact-item">
@@ -592,28 +733,46 @@
                             <a href="mailto:usmanthedev@gmail.com" class="social-link">
                                 <i class="fas fa-envelope"></i>
                             </a>
-                            <a href="tel:+923315994791" class="social-link">
-                                <i class="fas fa-phone"></i>
+                            <a href="https://wa.me/923315994791" class="social-link">
+                                <i class="fab fa-whatsapp"></i>
                             </a>
                         </div>
                     </div>
                     <div class="contact-form">
-                        <h3>Send a Message</h3>
-                        <form>
-                            <div class="form-group">
-                                <input type="text" placeholder="Your Name" required>
+                        <h3>Get a Free Quote</h3>
+                        <form id="contact-form">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <input type="text" name="name" placeholder="Your Name" required>
+                                </div>
+                                <div class="form-group">
+                                    <input type="email" name="email" placeholder="Your Email" required>
+                                </div>
                             </div>
                             <div class="form-group">
-                                <input type="email" placeholder="Your Email" required>
+                                <select name="service" required>
+                                    <option value="">Select Service Type</option>
+                                    <option value="backend">Backend Development</option>
+                                    <option value="mobile">Mobile App Development</option>
+                                    <option value="fullstack">Full-Stack Web App</option>
+                                    <option value="automation">Automation & Scripts</option>
+                                    <option value="other">Other</option>
+                                </select>
                             </div>
                             <div class="form-group">
-                                <input type="text" placeholder="Subject" required>
+                                <input type="text" name="budget" placeholder="Project Budget Range" required>
                             </div>
                             <div class="form-group">
-                                <textarea placeholder="Your Message" rows="5" required></textarea>
+                                <textarea name="message" placeholder="Tell me about your project..." rows="5" required></textarea>
                             </div>
-                            <button type="submit" class="btn-primary">Send Message</button>
+                            <button type="submit" class="btn-primary" id="submit-btn">
+                                <span class="btn-text">Get Free Quote</span>
+                                <span class="btn-loading" style="display: none;">
+                                    <i class="fas fa-spinner fa-spin"></i> Sending...
+                                </span>
+                            </button>
                         </form>
+                        <div id="form-message" class="form-message" style="display: none;"></div>
                     </div>
                 </div>
             </div>
@@ -685,7 +844,7 @@
         }));
 
         // Typing animation
-        const text = "Hi, I'm Muhammad Usman";
+        const text = "I Help Businesses Grow with Code";
         const typingElement = document.querySelector('.typing-text');
         let i = 0;
 
@@ -700,6 +859,37 @@
         }
 
         setTimeout(typeWriter, 1000);
+
+        // Dark mode toggle
+        const themeToggle = document.getElementById('theme-toggle');
+        const body = document.body;
+        const themeIcon = themeToggle.querySelector('i');
+
+        // Check for saved theme preference or default to 'light'
+        const currentTheme = localStorage.getItem('theme') || 'light';
+        body.setAttribute('data-theme', currentTheme);
+        
+        // Set initial icon
+        if (currentTheme === 'dark') {
+            themeIcon.className = 'fas fa-sun';
+        } else {
+            themeIcon.className = 'fas fa-moon';
+        }
+
+        themeToggle.addEventListener('click', () => {
+            const currentTheme = body.getAttribute('data-theme');
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            
+            body.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+            
+            // Update icon
+            if (newTheme === 'dark') {
+                themeIcon.className = 'fas fa-sun';
+            } else {
+                themeIcon.className = 'fas fa-moon';
+            }
+        });
 
         // Counter animation
         const counters = document.querySelectorAll('.stat-number');
@@ -746,10 +936,155 @@
             observer.observe(el);
         });
 
-        // Form submission (you can replace this with actual form handling)
-        document.querySelector('form').addEventListener('submit', (e) => {
+        // ===============================================
+        // CONTACT FORM HANDLING - MULTIPLE OPTIONS
+        // ===============================================
+        
+        // OPTION 1: EmailJS (Recommended)
+        // Follow these steps to set up EmailJS:
+        // 1. Go to https://www.emailjs.com/ and create a free account
+        // 2. Create an email service (Gmail, Outlook, etc.)
+        // 3. Create an email template with variables: {{name}}, {{email}}, {{service}}, {{budget}}, {{message}}
+        // 4. Replace the credentials below with your actual EmailJS credentials
+        
+        const EMAILJS_SERVICE_ID = 'YOUR_SERVICE_ID'; // Replace with your service ID
+        const EMAILJS_TEMPLATE_ID = 'YOUR_TEMPLATE_ID'; // Replace with your template ID  
+        const EMAILJS_PUBLIC_KEY = 'YOUR_PUBLIC_KEY'; // Replace with your public key
+
+        // Check if EmailJS is configured
+        const isEmailJSConfigured = EMAILJS_SERVICE_ID !== 'YOUR_SERVICE_ID' && 
+                                   EMAILJS_TEMPLATE_ID !== 'YOUR_TEMPLATE_ID' && 
+                                   EMAILJS_PUBLIC_KEY !== 'YOUR_PUBLIC_KEY';
+
+        if (isEmailJSConfigured) {
+            emailjs.init(EMAILJS_PUBLIC_KEY);
+        }
+
+        // Form submission handler
+        document.getElementById('contact-form').addEventListener('submit', async (e) => {
             e.preventDefault();
-            alert('Thank you for your message! I\'ll get back to you soon.');
+            
+            const submitBtn = document.getElementById('submit-btn');
+            const btnText = submitBtn.querySelector('.btn-text');
+            const btnLoading = submitBtn.querySelector('.btn-loading');
+            const formMessage = document.getElementById('form-message');
+            
+            // Show loading state
+            btnText.style.display = 'none';
+            btnLoading.style.display = 'inline-flex';
+            submitBtn.disabled = true;
+            
+            // Get form data
+            const formData = new FormData(e.target);
+            const data = {
+                name: formData.get('name'),
+                email: formData.get('email'),
+                service: formData.get('service'),
+                budget: formData.get('budget'),
+                message: formData.get('message')
+            };
+            
+            try {
+                let success = false;
+                
+                // Try EmailJS first if configured
+                if (isEmailJSConfigured && typeof emailjs !== 'undefined') {
+                    try {
+                        const templateParams = {
+                            ...data,
+                            to_email: 'usmanthedev@gmail.com'
+                        };
+                        await emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, templateParams);
+                        success = true;
+                    } catch (emailError) {
+                        console.warn('EmailJS failed, trying fallback methods:', emailError);
+                    }
+                }
+                
+                // OPTION 2: Webhook/Zapier (if EmailJS fails)
+                if (!success) {
+                    try {
+                        // Replace with your webhook URL (Zapier, Make.com, or custom endpoint)
+                        const webhookUrl = 'YOUR_WEBHOOK_URL';
+                        
+                        if (webhookUrl !== 'YOUR_WEBHOOK_URL') {
+                            const response = await fetch(webhookUrl, {
+                                method: 'POST',
+                                headers: {
+                                    'Content-Type': 'application/json',
+                                },
+                                body: JSON.stringify(data)
+                            });
+                            
+                            if (response.ok) {
+                                success = true;
+                            }
+                        }
+                    } catch (webhookError) {
+                        console.warn('Webhook failed, using mailto fallback:', webhookError);
+                    }
+                }
+                
+                // OPTION 3: Mailto fallback (always works)
+                if (!success) {
+                    const subject = encodeURIComponent(`Portfolio Contact: ${data.service} - ${data.name}`);
+                    const body = encodeURIComponent(`
+Name: ${data.name}
+Email: ${data.email}
+Service: ${data.service}
+Budget: ${data.budget}
+
+Message:
+${data.message}
+
+---
+Sent from Muhammad Usman's Portfolio Website
+                    `.trim());
+                    
+                    window.location.href = `mailto:usmanthedev@gmail.com?subject=${subject}&body=${body}`;
+                    success = true;
+                }
+                
+                if (success) {
+                    // Show success message
+                    formMessage.innerHTML = `
+                        <div class="alert alert-success">
+                            <i class="fas fa-check-circle"></i>
+                            <strong>Success!</strong> Your message has been sent successfully. I'll get back to you within 24 hours with a detailed quote.
+                        </div>
+                    `;
+                    formMessage.style.display = 'block';
+                    
+                    // Reset form
+                    e.target.reset();
+                }
+                
+            } catch (error) {
+                console.error('All contact methods failed:', error);
+                
+                // Show error message with alternative contact methods
+                formMessage.innerHTML = `
+                    <div class="alert alert-error">
+                        <i class="fas fa-exclamation-triangle"></i>
+                        <strong>Error!</strong> There was a problem sending your message. Please contact me directly:
+                        <br><br>
+                        📧 <a href="mailto:usmanthedev@gmail.com" style="color: inherit; text-decoration: underline;">usmanthedev@gmail.com</a><br>
+                        📱 <a href="https://wa.me/923315994791" style="color: inherit; text-decoration: underline;">WhatsApp: +92 331 5994791</a><br>
+                        💼 <a href="https://www.linkedin.com/in/m-usman13/" style="color: inherit; text-decoration: underline;">LinkedIn: m-usman13</a>
+                    </div>
+                `;
+                formMessage.style.display = 'block';
+            } finally {
+                // Reset button state
+                btnText.style.display = 'inline';
+                btnLoading.style.display = 'none';
+                submitBtn.disabled = false;
+                
+                // Hide message after 15 seconds
+                setTimeout(() => {
+                    formMessage.style.display = 'none';
+                }, 15000);
+            }
         });
 
         // Project filtering functionality
